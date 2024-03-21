@@ -6,6 +6,7 @@ public class Waypoints : MonoBehaviour {
 
 	void Awake ()
 	{
+		// Arraylist? Actually nah. I'll win.
 		points = new Transform[transform.childCount];
 		for (int i = 0; i < points.Length; i++) {
 			points[i] = transform.GetChild(i);

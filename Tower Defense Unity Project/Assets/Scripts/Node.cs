@@ -18,7 +18,6 @@ public class Node : MonoBehaviour {
 	void OnMouseDown () {
 		if (turret != null) {
 			//TODO: 
-			Debug.Log("Can't build there! - TODO: Display on screen.");
 			return;
 		}
 
