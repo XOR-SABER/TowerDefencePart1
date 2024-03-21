@@ -10,31 +10,27 @@ public class Node : MonoBehaviour {
 	private Renderer rend;
 	private Color startColor;
 
-	void Start ()
-	{
+	void Start () {
 		rend = GetComponent<Renderer>();
 		startColor = rend.material.color;
     }
 
-	void OnMouseDown ()
-	{
-		if (turret != null)
-		{
+	void OnMouseDown () {
+		if (turret != null) {
+			//TODO: 
 			Debug.Log("Can't build there! - TODO: Display on screen.");
 			return;
 		}
 
 		GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
-		turret = (GameObject)Instantiate(turretToBuild, transform.position + positionOffset, transform.rotation);
+		turret = Instantiate(turretToBuild, transform.position + positionOffset, transform.rotation);
 	}
 
-	void OnMouseEnter ()
-	{
+	void OnMouseEnter () {
 		rend.material.color = hoverColor;
 	}
 
-	void OnMouseExit ()
-	{
+	void OnMouseExit () {
 		rend.material.color = startColor;
     }
 
